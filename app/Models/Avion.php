@@ -13,4 +13,9 @@ class Avion extends Model
     {
         return $this->belongsTo(TypeAppareil::class, 'typeAppareil_id');
     }
+
+    public function affectations()
+    {
+        return $this->hasMany(Affectation::class);
+    }
 }
