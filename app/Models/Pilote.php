@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pilote extends Model
 {
     use HasFactory;
+    protected $dates = ['embauche'];
 
     public function affectations()
     {

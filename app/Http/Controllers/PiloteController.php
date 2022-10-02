@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pilote;
 use Illuminate\Http\Request;
-
 
 class PiloteController extends Controller
 {
@@ -14,7 +14,10 @@ class PiloteController extends Controller
      */
     public function index()
     {
-        return view("pages.pilote");
+        $pilotes = Pilote::orderBy("nom", "asc")->paginate(12);
+        return view("pages.pilote", [
+            "pilotes" => $pilotes
+        ]);
     }
 
     /**
