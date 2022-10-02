@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PiloteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('base');
 });
+
+Route::get('pilote', [PiloteController::class, 'index'])->name('pilote');

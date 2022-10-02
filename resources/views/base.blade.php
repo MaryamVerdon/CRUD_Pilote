@@ -56,6 +56,10 @@
       </div>
     </div>
   </nav>
+
+  <div class="flex-wrap p-20">
+    @yield("content")
+  </div>
   
 </body>
 </html>
