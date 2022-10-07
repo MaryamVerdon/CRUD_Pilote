@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('affectations', function (Blueprint $table) {
             $table->id();
             $table->integer('nbPassager');
-            $table->foreignId('vol_id')->constrained();
-            $table->foreignId('pilote_id')->constrained();
-            $table->foreignId('avion_id')->constrained();
+            $table->date('dateVol');
+            $table->foreignId('vol_id')->constrained()->onDelete('cascade');
+            $table->foreignId('pilote_id')->constrained()->onDelete('cascade');
+            $table->foreignId('avion_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

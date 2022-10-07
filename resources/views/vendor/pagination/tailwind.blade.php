@@ -57,6 +57,7 @@
                             </svg>
                         </a>
                     @endif
+                    
 
                     {{-- Pagination Elements --}}
                     @foreach ($elements as $element)
