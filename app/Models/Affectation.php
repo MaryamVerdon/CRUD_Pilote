@@ -9,6 +9,7 @@ class Affectation extends Model
 {
     use HasFactory;
     protected $dates = ['dateVol'];
+    protected $fillable = ["nbPassager", "dateVol", "vol_id", "pilote_id", "avion_id"];
 
     public function avion()
     {

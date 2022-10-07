@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreignId('avion_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
+
     }
 
     /**

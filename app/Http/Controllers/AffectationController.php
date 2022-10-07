@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Affectation;
+use App\Models\Avion;
+use App\Models\Pilote;
+use App\Models\Vol;
 use Illuminate\Http\Request;
 
 class AffectationController extends Controller
@@ -27,7 +30,10 @@ class AffectationController extends Controller
      */
     public function create()
     {
-        //
+        $pilotes = Pilote::all();
+        $avions = Avion::all();
+        $vols = Vol::all();
+        return view("pages.createAffectation", compact('pilotes', 'avions', 'vols'));
     }
 
     /**
@@ -38,7 +44,16 @@ class AffectationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "nbPassager" => "required",
+            "dateVol" => "required",
+            "vol_id" => "required",
+            "pilote_id" => "required",
+            "avion_id" => "required",
+        ]);
+
+        Affectation::create($request->all());
+        return back()->with("success", "Affectation ajouté avec succès ! ");
     }
 
     /**
