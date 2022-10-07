@@ -30,7 +30,7 @@
   
               <a href="{{ route('vol')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Vols</a>
   
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Affectations</a>
+              <a href="{{ route('affectation')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Affectations</a>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
   
         <a href="{{ route('vol')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Vols</a>
   
-        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Affectations</a>
+        <a href="{{ route('affectation')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Affectations</a>
       </div>
     </div>
   </nav>

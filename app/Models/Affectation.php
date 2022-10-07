@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Affectation extends Model
 {
     use HasFactory;
+    protected $dates = ['dateVol'];
 
     public function avion()
     {

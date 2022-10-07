@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AffectationController;
 use App\Http\Controllers\PiloteController;
 use App\Http\Controllers\VolController;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,5 @@ Route::get('/', function () {
 
 Route::get('pilote', [PiloteController::class, 'index'])->name('pilote');
 Route::get('vol', [VolController::class, 'index'])->name('vol');
+
+Route::get('affectation', [AffectationController::class, 'index'])->name('affectation');
