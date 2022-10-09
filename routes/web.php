@@ -26,3 +26,4 @@ Route::get('vol', [VolController::class, 'index'])->name('vol');
 Route::get('affectation', [AffectationController::class, 'index'])->name('affectation');
 Route::get("/affectation/create", [AffectationController::class, "create"])->name('create_affectation');
 Route::post("/affectation/create", [AffectationController::class, "store"])->name('add_affectation');
+Route::delete("/affectation/{affectation}", [AffectationController::class, "delete"])->name('delete_affectation');

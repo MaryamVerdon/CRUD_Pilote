@@ -93,11 +93,12 @@ class AffectationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Affectation $affectation
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Affectation $affectation)
     {
-        //
+        $affectation->delete();
+        return back()->with("successDelete", "L'affectation $affectation->id à été supprimée avec succès ! ");
     }
 }
