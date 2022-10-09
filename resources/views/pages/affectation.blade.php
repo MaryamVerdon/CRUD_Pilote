@@ -8,6 +8,11 @@
     <div class="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
         <div class="w-full lg:w-5/6">
             <div class="bg-white shadow-md rounded my-6">
+                @if(session()->has('successDelete'))
+                <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+                    <p class="font-bold">{{ session()->get('successDelete') }}</p>
+                </div>  
+                @endif
                 <table class="min-w-max w-full table-auto">
                     <thead>
                         <tr class="bg-violet-700 text-zinc-50 uppercase text-sm leading-normal">
@@ -52,9 +57,10 @@
                                         <svg  fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></a>
                                     </div>
                                     <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                                        <a href="{{ route('edit_affectation', ['affectation' => $affectation->id])}}">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                        </svg>
+                                        </svg></a>
                                     </div>
 
                                     <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">

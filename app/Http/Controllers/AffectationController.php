@@ -70,24 +70,37 @@ class AffectationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Affectation $affectation
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Affectation $affectation)
     {
-        //
+        $vols = Vol::all();
+        $avions = Avion::all();
+        $pilotes = Pilote::all();
+        return view("pages.editAffectation", compact("affectation", "vols", "avions", "pilotes"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Affectation $affectation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Affectation $affectation)
     {
-        //
+
+        $request->validate([
+            "nbPassager" => "required",
+            "dateVol" => "required",
+            "vol_id" => "required",
+            "pilote_id" => "required",
+            "avion_id" => "required",
+        ]);
+
+        $affectation->update($request->all());
+        return back()->with("success", "Affectation mise à jour avec succès ! ");
     }
 
     /**
